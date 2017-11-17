@@ -26,6 +26,7 @@ package be.yildizgames.engine.feature.city.building;
 
 import be.yildiz.common.Instance;
 import be.yildiz.common.Level;
+import be.yildiz.common.graphic.MaterialId;
 import be.yildiz.common.translation.Key;
 import be.yildiz.common.vector.Point3D;
 import be.yildizgames.engine.feature.city.ClientBuildingMaterialization;
@@ -40,7 +41,7 @@ import java.time.Duration;
  *
  * @author Grégory Van den Borre
  */
-public class ClientBuildingData implements ClientConstructionData, BuildingData {
+public class ClientBuildingData implements BuildingData {
 
     /**
      * Common data for the building data.
@@ -73,12 +74,10 @@ public class ClientBuildingData implements ClientConstructionData, BuildingData 
         this.materialization.generate(world, position);
     }
 
-    @Override
     public final Key getDescriptionKey() {
         return this.guiMaterialization.getDescriptionKey();
     }
 
-    @Override
     public final Key getNameKey() {
         return this.guiMaterialization.getNameKey();
     }
@@ -123,14 +122,16 @@ public class ClientBuildingData implements ClientConstructionData, BuildingData 
         return this.data.getTimeToBuild(Level.ONE);
     }
 
-    @Override
-    public final Material getAnimatedIcon() {
+    public final MaterialId getAnimatedIcon() {
         return this.guiMaterialization.getIcon();
     }
 
-    @Override
-    public final ButtonMaterial getConstructionButton() {
-        return this.guiMaterialization.getConstructionButton();
+    public final MaterialId getConstructionButton() {
+        return this.guiMaterialization.getButton();
+    }
+
+    public final MaterialId getConstructionButtonOver() {
+        return this.guiMaterialization.getButtonHl();
     }
 
     @Override
@@ -158,12 +159,10 @@ public class ClientBuildingData implements ClientConstructionData, BuildingData 
         return this.data.isBuildable();
     }
 
-    @Override
     public final Level getRequiredLevel() {
         return Level.ZERO;
     }
 
-    @Override
     public final Instance getMaxInstances() {
         return Instance.UNIQUE;
     }

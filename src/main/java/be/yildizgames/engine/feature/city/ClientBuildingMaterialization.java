@@ -24,7 +24,6 @@
 
 package be.yildizgames.engine.feature.city;
 
-import be.yildiz.client.game.engine.ClientWorld;
 import be.yildiz.common.vector.Point3D;
 
 /**

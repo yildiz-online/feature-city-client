@@ -23,10 +23,8 @@
 
 package be.yildizgames.engine.feature.city.building;
 
-import be.yildiz.client.data.ClientBaseGuiMaterialization;
+import be.yildiz.common.graphic.MaterialId;
 import be.yildiz.common.translation.Key;
-import be.yildiz.module.graphic.Material;
-import be.yildiz.module.graphic.gui.ButtonMaterial;
 
 /**
  * Materialization for a building in the GUI.
@@ -38,10 +36,51 @@ import be.yildiz.module.graphic.gui.ButtonMaterial;
 //@specfield descriptionKey:Translation key for the description.
 //@specfield icon:Material:2D representation of the element.
 //@specfield constructionButton:ButtonMaterial:GuiButton to display to build the item.
-public class ClientBuildingGuiMaterialization extends ClientBaseGuiMaterialization {
+public class ClientBuildingGuiMaterialization {
 
-    protected ClientBuildingGuiMaterialization(Key nameKey, Key descriptionKey, Material icon, ButtonMaterial constructionButton) {
-        super(nameKey, descriptionKey, icon, constructionButton);
+    /**
+     * Translation key for the GUI element name.
+     */
+    private final Key nameKey;
+    /**
+     * Translation key for the GUI element description.
+     */
+    private final Key descriptionKey;
+    /**
+     * Material to use to display the 2D GUI representation.
+     */
+    private final MaterialId icon;
+
+    private final MaterialId button;
+
+    private final MaterialId buttonHl;
+
+    protected ClientBuildingGuiMaterialization(Key nameKey, Key descriptionKey, MaterialId icon, MaterialId button, MaterialId buttonHl) {
+        super();
+        this.nameKey = nameKey;
+        this.descriptionKey = descriptionKey;
+        this.icon = icon;
+        this.button = button;
+        this.buttonHl = buttonHl;
     }
 
+    public final Key getNameKey() {
+        return nameKey;
+    }
+
+    public final Key getDescriptionKey() {
+        return descriptionKey;
+    }
+
+    public final MaterialId getIcon() {
+        return icon;
+    }
+
+    public final MaterialId getButton() {
+        return button;
+    }
+
+    public final MaterialId getButtonHl() {
+        return buttonHl;
+    }
 }

@@ -24,6 +24,7 @@
 package be.yildizgames.engine.feature.city.building;
 
 import be.yildiz.common.Level;
+import be.yildiz.common.graphic.MaterialId;
 import be.yildiz.common.id.EntityId;
 import be.yildiz.common.translation.Key;
 import be.yildiz.common.vector.Point3D;
@@ -176,7 +177,7 @@ public final class ClientBuilding implements Building {
     /**
      * @return The material to use as icon for this building.
      */
-    public Material getIcon() {
+    public MaterialId getIcon() {
         return data.getGuiMaterialization().getIcon();
     }
 
@@ -202,8 +203,12 @@ public final class ClientBuilding implements Building {
         return this.building.getOldStaff();
     }
 
-    public ButtonMaterial getBuildingButton() {
+    public MaterialId getBuildingButton() {
         return this.data.getConstructionButton();
+    }
+
+    public MaterialId getBuildingButtonOver() {
+        return this.data.getConstructionButtonOver();
     }
 
 }

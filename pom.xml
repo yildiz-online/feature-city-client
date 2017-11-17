@@ -29,7 +29,7 @@
     <dependency>
       <groupId>be.yildiz-games</groupId>
       <artifactId>feature-city-shared</artifactId>
-      <version>1.0.0-SNAPHOT</version>
+      <version>1.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>be.yildiz-games</groupId>
