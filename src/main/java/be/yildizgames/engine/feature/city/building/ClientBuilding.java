@@ -23,12 +23,12 @@
 
 package be.yildizgames.engine.feature.city.building;
 
-import be.yildiz.common.Level;
 import be.yildiz.common.graphic.MaterialId;
-import be.yildiz.common.id.EntityId;
 import be.yildiz.common.translation.Key;
-import be.yildiz.common.vector.Point3D;
+import be.yildizgames.common.geometry.Point3D;
+import be.yildizgames.common.model.EntityId;
 import be.yildizgames.engine.feature.city.building.staff.Staff;
+import be.yildizgames.engine.feature.entity.Level;
 import be.yildizgames.engine.feature.resource.ResourceValue;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 

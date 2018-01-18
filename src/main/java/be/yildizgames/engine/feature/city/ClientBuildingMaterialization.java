@@ -24,7 +24,7 @@
 
 package be.yildizgames.engine.feature.city;
 
-import be.yildiz.common.vector.Point3D;
+import be.yildizgames.common.geometry.Point3D;
 
 /**
  * Create the materialization of a building at a given place.
