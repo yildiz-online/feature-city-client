@@ -23,10 +23,9 @@
 
 package be.yildizgames.engine.feature.city.building;
 
-import be.yildiz.common.graphic.MaterialId;
 import be.yildiz.common.translation.Key;
 import be.yildizgames.common.geometry.Point3D;
-import be.yildizgames.common.model.EntityId;
+import be.yildizgames.engine.feature.city.CityId;
 import be.yildizgames.engine.feature.city.building.staff.Staff;
 import be.yildizgames.engine.feature.entity.Level;
 import be.yildizgames.engine.feature.resource.ResourceValue;
@@ -41,7 +40,7 @@ import java.time.Duration;
  *
  * @author Grégory Van den Borre
  */
-public final class ClientBuilding implements Building {
+public final class ClientBuilding<T, U> implements Building {
 
     /**
      * Wrapped base building.
@@ -51,7 +50,7 @@ public final class ClientBuilding implements Building {
     /**
      * Client data for this building.
      */
-    private final ClientBuildingData data;
+    private final ClientBuildingData<T, U> data;
 
     /**
      * Instantiate a new ClientBuilding.
@@ -64,7 +63,7 @@ public final class ClientBuilding implements Building {
      * @throws NullPointerException     If any parameter is null.
      * @throws IllegalArgumentException If any parameter is not in the bounded values(@see BaseBuilding) for rules.
      */
-    public ClientBuilding(EntityId id, ClientBuildingData data, BuildingPosition position, Level level, Staff staff) {
+    public ClientBuilding(CityId id, ClientBuildingData<T, U> data, BuildingPosition position, Level level, Staff staff) {
         super();
         this.building = new BaseBuilding(id, data, position, level, staff);
         this.data = data;
@@ -86,7 +85,7 @@ public final class ClientBuilding implements Building {
      * @param world    World used to create the materialization.
      * @param position Position of this building.
      */
-    public void materialize(final ClientWorld world, final Point3D position) {
+    public void materialize(final T world, final Point3D position) {
         this.data.getMaterialization().generate(world, position);
     }
 
@@ -101,7 +100,7 @@ public final class ClientBuilding implements Building {
     }
 
     @Override
-    public EntityId getCity() {
+    public CityId getCity() {
         return this.building.getCity();
     }
 
@@ -177,7 +176,7 @@ public final class ClientBuilding implements Building {
     /**
      * @return The material to use as icon for this building.
      */
-    public MaterialId getIcon() {
+    public U getIcon() {
         return data.getGuiMaterialization().getIcon();
     }
 
@@ -203,11 +202,11 @@ public final class ClientBuilding implements Building {
         return this.building.getOldStaff();
     }
 
-    public MaterialId getBuildingButton() {
+    public U getBuildingButton() {
         return this.data.getConstructionButton();
     }
 
-    public MaterialId getBuildingButtonOver() {
+    public U getBuildingButtonOver() {
         return this.data.getConstructionButtonOver();
     }
 

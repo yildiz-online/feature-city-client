@@ -32,7 +32,7 @@ import be.yildizgames.common.geometry.Point3D;
  * @author Grégory Van den Borre
  */
 @FunctionalInterface
-public interface ClientBuildingMaterialization {
+public interface ClientBuildingMaterialization<T> {
 
     /**
      * Generate the materialization.
@@ -43,6 +43,6 @@ public interface ClientBuildingMaterialization {
     //@Requires world != null
     //@Requires position != null
     //@Effect create a materialization of the building in the game view.
-    void generate(ClientWorld world, Point3D position);
+    void generate(T world, Point3D position);
 
 }

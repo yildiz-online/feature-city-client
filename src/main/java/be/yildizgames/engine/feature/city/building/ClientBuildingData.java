@@ -24,7 +24,6 @@
 package be.yildizgames.engine.feature.city.building;
 
 
-import be.yildiz.common.graphic.MaterialId;
 import be.yildiz.common.translation.Key;
 import be.yildizgames.common.geometry.Point3D;
 import be.yildizgames.engine.feature.city.ClientBuildingMaterialization;
@@ -41,7 +40,7 @@ import java.time.Duration;
  *
  * @author Grégory Van den Borre
  */
-public class ClientBuildingData implements BuildingData {
+public class ClientBuildingData<T, U> implements BuildingData {
 
     /**
      * Common data for the building data.
@@ -51,14 +50,14 @@ public class ClientBuildingData implements BuildingData {
     /**
      * Visual 3D materialisation to be used in the game.
      */
-    private final ClientBuildingMaterialization materialization;
+    private final ClientBuildingMaterialization<T> materialization;
 
     /**
      * Visual 2D materialization to be used in the GUI.
      */
-    private final ClientBuildingGuiMaterialization guiMaterialization;
+    private final ClientBuildingGuiMaterialization<U> guiMaterialization;
 
-    protected ClientBuildingData(BuildingData data, ClientBuildingMaterialization materialization, ClientBuildingGuiMaterialization guiMaterialization) {
+    protected ClientBuildingData(BuildingData data, ClientBuildingMaterialization<T> materialization, ClientBuildingGuiMaterialization<U> guiMaterialization) {
         this.data = data;
         this.materialization = materialization;
         this.guiMaterialization = guiMaterialization;
@@ -70,7 +69,7 @@ public class ClientBuildingData implements BuildingData {
      * @param world    World to build the materialization.
      * @param position Position the the materialization will be located.
      */
-    public final void generateModel(final ClientWorld world, final Point3D position) {
+    public final void generateModel(final T world, final Point3D position) {
         this.materialization.generate(world, position);
     }
 
@@ -122,15 +121,15 @@ public class ClientBuildingData implements BuildingData {
         return this.data.getTimeToBuild(Level.ONE);
     }
 
-    public final MaterialId getAnimatedIcon() {
+    public final U getAnimatedIcon() {
         return this.guiMaterialization.getIcon();
     }
 
-    public final MaterialId getConstructionButton() {
+    public final U getConstructionButton() {
         return this.guiMaterialization.getButton();
     }
 
-    public final MaterialId getConstructionButtonOver() {
+    public final U getConstructionButtonOver() {
         return this.guiMaterialization.getButtonHl();
     }
 
@@ -167,11 +166,11 @@ public class ClientBuildingData implements BuildingData {
         return Instance.UNIQUE;
     }
 
-    ClientBuildingMaterialization getMaterialization() {
+    ClientBuildingMaterialization<T> getMaterialization() {
         return materialization;
     }
 
-    ClientBuildingGuiMaterialization getGuiMaterialization() {
+    ClientBuildingGuiMaterialization<U> getGuiMaterialization() {
         return guiMaterialization;
     }
 }

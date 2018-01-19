@@ -23,7 +23,6 @@
 
 package be.yildizgames.engine.feature.city.building;
 
-import be.yildiz.common.graphic.MaterialId;
 import be.yildiz.common.translation.Key;
 
 /**
@@ -36,7 +35,7 @@ import be.yildiz.common.translation.Key;
 //@specfield descriptionKey:Translation key for the description.
 //@specfield icon:Material:2D representation of the element.
 //@specfield constructionButton:ButtonMaterial:GuiButton to display to build the item.
-public class ClientBuildingGuiMaterialization {
+public class ClientBuildingGuiMaterialization<T> {
 
     /**
      * Translation key for the GUI element name.
@@ -49,13 +48,13 @@ public class ClientBuildingGuiMaterialization {
     /**
      * Material to use to display the 2D GUI representation.
      */
-    private final MaterialId icon;
+    private final T icon;
 
-    private final MaterialId button;
+    private final T button;
 
-    private final MaterialId buttonHl;
+    private final T buttonHl;
 
-    protected ClientBuildingGuiMaterialization(Key nameKey, Key descriptionKey, MaterialId icon, MaterialId button, MaterialId buttonHl) {
+    protected ClientBuildingGuiMaterialization(Key nameKey, Key descriptionKey, T icon, T button, T buttonHl) {
         super();
         this.nameKey = nameKey;
         this.descriptionKey = descriptionKey;
@@ -72,15 +71,15 @@ public class ClientBuildingGuiMaterialization {
         return descriptionKey;
     }
 
-    public final MaterialId getIcon() {
+    public final T getIcon() {
         return icon;
     }
 
-    public final MaterialId getButton() {
+    public final T getButton() {
         return button;
     }
 
-    public final MaterialId getButtonHl() {
+    public final T getButtonHl() {
         return buttonHl;
     }
 }
