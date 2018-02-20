@@ -22,9 +22,9 @@
  *
  */
 
-package be.yildizgames.engine.feature.city.building;
+package be.yildizgames.engine.feature.city.client.building;
 
-import be.yildiz.common.translation.Key;
+import be.yildizgames.common.client.translation.Key;
 
 /**
  * Materialization for a building in the GUI.

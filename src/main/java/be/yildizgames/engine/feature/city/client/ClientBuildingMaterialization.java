@@ -22,9 +22,27 @@
  *
  */
 
+package be.yildizgames.engine.feature.city.client;
+
+import be.yildizgames.common.geometry.Point3D;
+
 /**
- * Package for the client data used by buildings.
+ * Create the materialization of a building at a given place.
  *
  * @author Grégory Van den Borre
  */
-package be.yildizgames.engine.feature.city.building;
+@FunctionalInterface
+public interface ClientBuildingMaterialization<T> {
+
+    /**
+     * Generate the materialization.
+     *
+     * @param world    World used to create the materialization.
+     * @param position Position where the materialization will be build.
+     */
+    //@Requires world != null
+    //@Requires position != null
+    //@Effect create a materialization of the building in the game view.
+    void generate(T world, Point3D position);
+
+}

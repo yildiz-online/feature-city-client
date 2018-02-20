@@ -22,13 +22,15 @@
  *
  */
 
-package be.yildizgames.engine.feature.city.building;
+package be.yildizgames.engine.feature.city.client.building;
 
 
-import be.yildiz.common.translation.Key;
+import be.yildizgames.common.client.translation.Key;
 import be.yildizgames.common.geometry.Point3D;
-import be.yildizgames.engine.feature.city.ClientBuildingMaterialization;
+import be.yildizgames.engine.feature.city.building.BuildingData;
+import be.yildizgames.engine.feature.city.building.BuildingType;
 import be.yildizgames.engine.feature.city.building.staff.Staff;
+import be.yildizgames.engine.feature.city.client.ClientBuildingMaterialization;
 import be.yildizgames.engine.feature.entity.Instance;
 import be.yildizgames.engine.feature.entity.Level;
 import be.yildizgames.engine.feature.resource.ResourceValue;
