@@ -24,7 +24,7 @@
 
 package be.yildizgames.engine.feature.city.client.building;
 
-import be.yildizgames.common.client.translation.Key;
+import be.yildizgames.common.client.translation.TranslationKey;
 
 /**
  * Materialization for a building in the GUI.
@@ -41,11 +41,11 @@ public class ClientBuildingGuiMaterialization<T> {
     /**
      * Translation key for the GUI element name.
      */
-    private final Key nameKey;
+    private final TranslationKey nameKey;
     /**
      * Translation key for the GUI element description.
      */
-    private final Key descriptionKey;
+    private final TranslationKey descriptionKey;
     /**
      * Material to use to display the 2D GUI representation.
      */
@@ -55,7 +55,7 @@ public class ClientBuildingGuiMaterialization<T> {
 
     private final T buttonHl;
 
-    protected ClientBuildingGuiMaterialization(Key nameKey, Key descriptionKey, T icon, T button, T buttonHl) {
+    protected ClientBuildingGuiMaterialization(TranslationKey nameKey, TranslationKey descriptionKey, T icon, T button, T buttonHl) {
         super();
         this.nameKey = nameKey;
         this.descriptionKey = descriptionKey;
@@ -64,11 +64,11 @@ public class ClientBuildingGuiMaterialization<T> {
         this.buttonHl = buttonHl;
     }
 
-    public final Key getNameKey() {
+    public final TranslationKey getNameKey() {
         return nameKey;
     }
 
-    public final Key getDescriptionKey() {
+    public final TranslationKey getDescriptionKey() {
         return descriptionKey;
     }
 

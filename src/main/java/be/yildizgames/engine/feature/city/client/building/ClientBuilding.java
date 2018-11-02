@@ -24,15 +24,15 @@
 
 package be.yildizgames.engine.feature.city.client.building;
 
-import be.yildizgames.common.client.translation.Key;
+import be.yildizgames.common.client.translation.TranslationKey;
 import be.yildizgames.common.geometry.Point3D;
 import be.yildizgames.engine.feature.city.CityId;
+import be.yildizgames.engine.feature.city.Level;
 import be.yildizgames.engine.feature.city.building.BaseBuilding;
 import be.yildizgames.engine.feature.city.building.Building;
 import be.yildizgames.engine.feature.city.building.BuildingPosition;
 import be.yildizgames.engine.feature.city.building.BuildingType;
 import be.yildizgames.engine.feature.city.building.staff.Staff;
-import be.yildizgames.engine.feature.entity.Level;
 import be.yildizgames.engine.feature.resource.ResourceValue;
 import be.yildizgames.engine.feature.resource.bonus.BonusResources;
 
@@ -147,14 +147,14 @@ public final class ClientBuilding<T, U> implements Building {
     /**
      * @return This building description translation key.
      */
-    public Key getDescriptionKey() {
+    public TranslationKey getDescriptionKey() {
         return this.data.getDescriptionKey();
     }
 
     /**
      * @return This building name translation key.
      */
-    public Key getNameKey() {
+    public TranslationKey getNameKey() {
         return this.data.getNameKey();
     }
 
