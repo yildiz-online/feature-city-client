@@ -214,5 +214,4 @@ public final class ClientBuilding<T, U> implements Building {
     public U getBuildingButtonOver() {
         return this.data.getConstructionButtonOver();
     }
-
 }

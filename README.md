@@ -10,12 +10,12 @@ The library contains all the client components to use the city feature.
 
 ## Requirements
 
-To build this module, you will need a java 9 JDK and Maven 3.
+To build this module, you will need a the latest Java JDK and Maven 3.
 
 ## Coding Style and other information
 
 Project website:
-http://www.yildiz-games.be
+https://engine.yildiz-games.be
 
 Issue tracker:
 https://yildiz.atlassian.net/browse/YFCC

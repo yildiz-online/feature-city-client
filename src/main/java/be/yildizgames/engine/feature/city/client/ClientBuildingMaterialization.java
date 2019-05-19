@@ -44,5 +44,4 @@ public interface ClientBuildingMaterialization<T> {
     //@Requires position != null
     //@Effect create a materialization of the building in the game view.
     void generate(T world, Point3D position);
-
 }

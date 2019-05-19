@@ -174,6 +174,6 @@ public class ClientBuildingData<T, U> implements BuildingData {
     }
 
     ClientBuildingGuiMaterialization<U> getGuiMaterialization() {
-        return guiMaterialization;
+        return this.guiMaterialization;
     }
 }
