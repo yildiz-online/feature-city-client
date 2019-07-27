@@ -27,8 +27,8 @@ package be.yildizgames.engine.feature.city.client.building;
 
 import be.yildizgames.common.client.translation.TranslationKey;
 import be.yildizgames.common.geometry.Point3D;
+import be.yildizgames.common.model.Level;
 import be.yildizgames.engine.feature.city.Instance;
-import be.yildizgames.engine.feature.city.Level;
 import be.yildizgames.engine.feature.city.building.BuildingData;
 import be.yildizgames.engine.feature.city.building.BuildingType;
 import be.yildizgames.engine.feature.city.building.staff.Staff;

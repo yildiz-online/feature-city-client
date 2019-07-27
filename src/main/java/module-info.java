@@ -24,6 +24,7 @@
 
 module be.yildizgames.feature.city.client {
     requires be.yildizgames.common.geometry;
+    requires be.yildizgames.common.model;
     requires be.yildizgames.feature.city.shared;
     requires be.yildizgames.common.client;
     requires be.yildizgames.feature.resource.shared;
