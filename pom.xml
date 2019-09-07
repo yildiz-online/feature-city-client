@@ -65,19 +65,4 @@
       <version>3.0.2</version>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm</artifactId>
-            <version>7.1</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
 </project>
